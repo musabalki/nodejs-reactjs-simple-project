@@ -14,7 +14,8 @@ function App() {
   const getMovieList = () => {
     Axios.get("http://localhost:3001/api/get").then((res) => {
       setMovieList(res.data)
-    }).catch((err) => {
+    })
+    .catch((err) => {
       console.log(err)
     })
   }
@@ -30,10 +31,10 @@ function App() {
   const deleteReview=(id)=>{
     Axios.delete(`http://localhost:3001/api/delete/${id}`)
     .then(() => {
-     console.log("aaaa");
+     console.log("success");
     })
     .catch((err) => {
-      console.log("hata")
+      console.log(err)
     })
   }
   return (
